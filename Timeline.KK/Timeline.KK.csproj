@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net35</TargetFramework>
+		<RootNamespace>Timeline</RootNamespace>
+		<AssemblyName>Timeline</AssemblyName>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Sideloader.Koikatu" Version="21.0.0" />
+		<PackageReference Include="IllusionModdingAPI.KKAPI" Version="1.43.0" />
+	</ItemGroup>
+	<Import Project="..\Timeline.Core\Timeline.Core.projitems" Label="Shared" />
+	<Import Project="..\ToolBox\ToolBox.projitems" Label="Shared" />
+	<Import Project="..\UIUtility\UIUtility.projitems" Label="Shared" />
+</Project>

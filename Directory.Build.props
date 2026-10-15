@@ -1,0 +1,24 @@
+<Project>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputType>Library</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <OutputPath>$(MSBuildThisFileDirectory)bin\build\$(MSBuildProjectName)\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType Condition="'$(Configuration)' == 'Release'">none</DebugType>
+    <DefineConstants>$(DefineConstants);KK;Timeline;BEPINEX;KOIKATSU</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ExtensibleSaveFormat.Koikatu" Version="21.0.0" />
+    <PackageReference Include="IllusionLibs.Koikatu.AllPackages" Version="2019.4.27.4" />
+    <PackageReference Include="KoikatuCompatibilityAnalyzer" Version="1.1.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net35" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+  <Target Name="SkipAllRefs" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" />
+    </ItemGroup>
+  </Target>
+</Project>
